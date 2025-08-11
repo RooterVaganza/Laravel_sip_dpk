@@ -16,6 +16,10 @@
                             onclick="return confirm('Are you sure you want to export these transactions?')">
                             <i class="fa fa-table"></i> Export
                         </a>
+                        <a href="{{ route('transactions.export-pdf') }}" class="btn btn-tool"
+                            onclick="return confirm('Are you sure you want to export these transactions?')">
+                            <i class="fa fa-table"></i> Export To Pdf
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">

@@ -29,6 +29,7 @@ Route ::prefix('admin')->group(function (){
     Route::post('/transactions/import', [TransactionController::class, 'import'])->name('transactions.import');
     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
     Route::get('transactions/export', [TransactionController::class, 'export'])->name('transactions.export');
+    Route::get('transactions/export-pdf', [TransactionController::class, 'exportToPdf'])->name('transactions.export-pdf');
 });
 
 
