@@ -6,16 +6,18 @@ use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(url('/login'));
 });
 
 
 Route::get('/test', function () {
     $name = "john doe";
-    return view ("sample",["name" => $name]);
-}); 
+    return view("sample", ["name" => $name]);
+});
 
-Route ::prefix('admin')->group(function (){
+Auth::routes();
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
     Route::post('/categories/store', [CategoryController::class, 'store'])->name('categories.store');
@@ -34,3 +36,7 @@ Route ::prefix('admin')->group(function (){
 
 
 
+
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -29,6 +29,7 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}">
 </head>
+@yield('cs')
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">

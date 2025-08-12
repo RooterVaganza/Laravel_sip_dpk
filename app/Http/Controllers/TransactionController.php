@@ -11,6 +11,11 @@ use Pdf;
 
 class TransactionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Transaction::class, 'transaction');
+    }
     public function create()
     {
         return view('admin.transactions.create');
